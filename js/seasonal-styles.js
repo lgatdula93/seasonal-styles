@@ -9,35 +9,35 @@
 
 const SEASONS = {
     default: {
-        quote: "Default",
+        quote: "Dress well all season long!",
         css: "css/default.css",
-        logo: "images/four-seasons.gif";
+        logo: "images/four-seasons.gif",
         wear: "images/300x400.png",
     },
     
     fall: {
-        quote: "Be-leaf in yourself and your fashion choices this FALL.",
+        quote: "This <strong>FALL</strong>, be-leaf in yourself and your fashion choices.",
         css: "css/fall.css",
         logo: "images/fall.gif",
         wear: "images/fall-wear.jpg",
     },
 
     spring: {
-        quote: "SPRING into action and bloom with fashion-forward choices.",
+        quote: "<strong>SPRING</strong> into action and bloom with fashion-forward choices.",
         css: "css/spring.css",
         logo: "images/spring.gif",
         wear: "images/spring-wear.jpg",
     },
 
     summer: {
-        quote: "Don't be a SUMMER fling; let your style sizzle all season long.",
+        quote: "Don't be a <strong>SUMMER</strong> fling; let your style sizzle all season long.",
         css: "css/summer.css",
         logo: "images/summer.gif",
         wear: "images/summer-wear.jpg",
     },
 
     winter: {
-        quote: "WINTER's here, so SNOW problem dressing well!",
+        quote: "<strong>WINTER</strong>'s here, so SNOW problem dressing well!",
         css: "css/winter.css",
         logo: "images/winter.gif",
         wear: "images/winter-wear.jpg",
@@ -54,20 +54,20 @@ $("document").ready(function() {
             let season = $(this).attr("href");//contents of href attribute of this element
             // alert(season);
                 
-            // destructuring assignment to unpack object properties from SEASONS (while looking cool and smart)
+            
             let {quote, css, logo, wear} = SEASONS[season]
 
-            // replace stylesheet
+            //update stylesheet
             $('link#season-css').attr("href",css)
 
-            // replace logo image
+            //update quote
+            $('h2#season-quote').html(quote)
+
+            //update logo image
             $('img#logo').attr("src", logo)
 
-            // replace wear image
+            //update wear image
             $('img#wear').attr("src", wear)
-
-            // replace quote
-            $('h2#season-quote').html(quote)
 
             });
         });
